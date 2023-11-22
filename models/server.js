@@ -1,6 +1,7 @@
 const express = require('express')
 const cors  = require('cors');//Implementar seguridad
 const { dbConection } = require('../database/config')
+const bodyParser = require('body-parser')
 
 class Server{
     
@@ -27,6 +28,7 @@ class Server{
 
     middlewares(){
         this.app.use( cors() ); //Indicar el uso de cors
+        this.app.use(bodyParser.json())
     }
 
     async conectarDB(){
