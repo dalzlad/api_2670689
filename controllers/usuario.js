@@ -27,7 +27,7 @@ const postUsuario = async(req, res) => {
 }
 
 const putUsuario = async(req, res) => {
-    const { nombre, password, rol, estado } = req.query //Desesctructurar
+    const { nombre, password, rol, estado } = req.body //Desesctructurar
     let mensaje = ''
     try {
         const usuario = await Usuario.findOneAndUpdate({nombre: nombre},
